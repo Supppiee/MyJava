@@ -6,11 +6,28 @@ import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Stream;
 
+
 public class StreamAPI {
-//Its an interface introduced in java 8, to process the objects in a collection we go with stream.
-//stream is divided into 2 kinds of operations, they are 
-	//1.Intermediate operations(transform stream to another stream) - filter, map, sorted, limit, etc
-	//2.Terminal operations(to produce a result and terminate the stream) - collect, reduce, count, etc
+	
+/*Its an interface introduced in java 8, to process the objects in a collection we go with stream.
+stream is divided into 2 kinds of operations, they are 
+	1.Intermediate operations(transform stream to another stream) - filter, map, sorted, limit, etc
+	2.Terminal operations(to produce a result and terminate the stream) - collect, reduce, count, etc
+	
+	 * map()
+	 * filter()
+	 * min()
+	 * max()
+	 * sum()
+	 * count()
+	 * collect()
+	 * sorted()
+	 * sorted(comparator)
+	 * forEach()
+	 * toArray()
+	 * Arrays.stream() or Stream.of()
+	 * */
+	
 
 	public static void main(String[] args) {
 		
@@ -60,11 +77,11 @@ public class StreamAPI {
 		System.out.println("Natural Sorting : Sorting characters : "+sorted);
 		
 		
-		//if we ever want customized sorting, we shd be going for comparator(functional interface)
-		//Method : compare(obj1, obj2):
-			//return -ve: if obj1 has come before obj2
-			//return +ve: if onj1 has come after obj2
-			//return 0: if obj1 n obj2 are equal
+		/*if we ever want customized sorting, we shd be going for comparator(functional interface)
+			Method : compare(obj1, obj2):
+				return -ve: if obj1 has come before obj2
+				return +ve: if onj1 has come after obj2
+				return 0: if obj1 n obj2 are equal*/
 		
 		
 		List<Integer> decending = beingSorted.stream().sorted((a,b)->((a<b)?1 : (a>b)?-1 : 0)).toList();
@@ -155,7 +172,34 @@ public class StreamAPI {
 		List<String> animals = Arrays.asList("Cat","Dog","Bird");
 		animals.stream().forEach(i->System.out.println(i));
 		
+		//========================================================
+		System.out.println();
+		/*How to convert a stream to an array
+		 toArray() : returns an array that contains the elements in that particular stream
+		 its a terminal operations*/
 		
+		System.out.println("---------------toArray()------------------");
+		List<Integer> numero = Arrays.asList(1,4,3,2,5,4,2,3);
+		Integer[] i = numero.stream().toArray(Integer[]::new);
+		System.out.println("stream converted to an array : "+Arrays.toString(i));
+		
+		List<String> cars = Arrays.asList("audi","bugati","Lord nano");
+		String[] car = cars.stream().toArray(String[]::new);
+		System.out.println("stream converted to an array : "+Arrays.toString(car));
+		
+		/*Similarly, converting an array to stream... How?
+		this can be done in 2 ways
+		1.Arrays.stream(array) 
+		2.Stream.of(arr) - generic*/
+		
+		int arr[] = {1,3,2,4,5,3,2,5};
+		System.out.print("Converting array to stream (Arrays.stream(arr_name)) : ");
+		Arrays.stream(arr).filter(j->j%2==0).forEach(j->System.out.print(j+" "));
+		
+		System.out.println();
+		//Stream.of(arr) is basically for a generic type.
+		Stream<?> s = Stream.of(1,4,false,0,"hello",2.43);
+		s.forEach(i1 -> System.out.print(i1+" "));
 	}
 
 }
