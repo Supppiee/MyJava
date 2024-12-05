@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
+import java.util.Set;
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 
@@ -82,6 +84,13 @@ stream is divided into 2 kinds of operations, they are
 				return -ve: if obj1 has come before obj2
 				return +ve: if onj1 has come after obj2
 				return 0: if obj1 n obj2 are equal*/
+		
+		System.out.println();
+		System.out.println("--------Collectors------");
+		List<Integer> numbersss = Arrays.asList(1, 2, 3, 4);
+		Set<Integer> numberSet = numbersss.stream().collect(Collectors.toSet());
+		System.out.println("Collectors : "+numberSet);
+
 		
 		
 		List<Integer> decending = beingSorted.stream().sorted((a,b)->((a<b)?1 : (a>b)?-1 : 0)).toList();
