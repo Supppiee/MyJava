@@ -37,7 +37,7 @@ public class Stream {
 		
 		
 		System.out.println("1.Finding the max salary");
-        //Employee MaxSal = emp.stream().max((a,b)->(Double.compare(a.getSalary(), b.getSalary()))).get();
+                //Employee MaxSal = emp.stream().max((a,b)->(Double.compare(a.getSalary(), b.getSalary()))).get();
 		//Another way to sort the elements in the stream.
 		Employee MaxSal = emp.stream().max(Comparator.comparingDouble(Employee::getSalary)).get();
 		System.out.println(MaxSal.getName());
