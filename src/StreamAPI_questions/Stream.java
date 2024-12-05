@@ -11,6 +11,15 @@ import java.util.Optional;
 import java.util.stream.Collector;
 import java.util.stream.Collectors;
 
+/*
+Questions
+1.Find the max salary
+2.Find the min salary
+3.Find the 2nd highest salary
+4.Find the employee with the highest exp
+5.Count the number of employee based in their gender
+*/
+
 public class Stream {
 	public static void main(String[] args) throws ParseException {
 		SimpleDateFormat dateFormat = new SimpleDateFormat("dd-mm-yyyy");
