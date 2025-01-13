@@ -29,12 +29,27 @@ public class RotateArray {
 		}
 		System.out.println(Arrays.toString(res));
 	}
+	
 
-	public static void main(String[] args) {
-		int arr[] = { 1, 2, 3, 4, 5, 6 };
-		int k = 1;
-		rotate2(arr, k);
+	static void rev(int arr[] ,int start, int end) {
+		int n = start+end;
+		for(int i=start; i<n/2; i++) {
+			int temp = arr[i];
+			arr[i] = arr[n-i];
+			arr[n-i] = temp;
+		}
 		
+	}
+	
+	public static void main(String[] args) {
+		int arr[] = { 1, 2, 3, 4, 5, 6, 7};
+		int k = 5;
+		int n = arr.length;
+		//rotate2(arr, k);
+		rev(arr, n-k ,n-1);
+		rev(arr, 0 , n-k-1);
+		rev(arr, 0, arr.length-1);
+		System.out.println(Arrays.toString(arr));
 	}
 }
 
