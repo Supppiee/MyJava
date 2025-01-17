@@ -1,7 +1,7 @@
 package Programming.Arrays;
 
 import java.util.Arrays;
-
+//2 pointer
 public class Count0and1s {
 
 	static void count(int arr[]) {
