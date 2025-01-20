@@ -14,13 +14,11 @@ public class RotateArray {
 			}
 		}
 	}
-	
 	static void rotate2(int arr[] , int k) {
 		int res[] = new int[arr.length];
 		int j = 0;
 		k = k%arr.length;
 		int n = arr.length;
-		
 		for(int i = n-k; i<=n-1; i++) {
 			res[j++] = arr[i];
 		}
