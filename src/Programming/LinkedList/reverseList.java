@@ -34,11 +34,12 @@ public class reverseList {
 		Node curr = head;
 		Node prev = null;
 		Node temp = null;
-		while (curr != null) {
+		while(curr != null) {
 			temp = curr.next;
 			curr.next = prev;
 			prev = curr;
 			curr = temp;
+			
 		}
 		return prev;
 	}
