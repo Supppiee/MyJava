@@ -2,6 +2,7 @@ package Programming.stacks;
 
 import java.util.ArrayList;
 
+//stack implementation using Arraylist
 public class ArrayListImplementation {
 	static class stack {
 		static ArrayList<Integer> list = new ArrayList<>();
